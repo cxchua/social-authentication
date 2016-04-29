@@ -1,0 +1,32 @@
+<form method="post" action="/stock_adjustment">
+  <div class="form-group">
+    <label for="reason">Reason</label>
+    <select name="reason">
+      <option value="New Products">New Product</option>
+      <option value="Returned">Returned</option>
+      <option value="Damaged">Damaged</option>
+      <option value="Promotion">Promotion</option>
+      <option value="Entry Error">Error</option>
+    </select>
+  </div>
+  <!-- alternatively we could add this in in the post controller -->
+  <!-- <div class="form-group">
+    <input type="hidden" class="form-control" value="testUser" id="userInCharge">
+  </div> -->
+  <table id="newAdjustmentTable">
+      <tr>
+        <td>Product SKU</td>
+        <td>Quantity Change</td>
+      </tr>
+      <tr>
+        <td><input type="text" name="sku"/></td>
+        <td><input type="text" name="qtyChange"/></td>
+      </tr>
+  </table>
+  <div id="addNewAdjustmentItem">Add another item</div>
+  <div class="form-group">
+    <label for="notes">Notes</label>
+    <input class="form-control" type="text" name="notes" id="notes">
+  </div>
+  <input class="btn btn-default" type="submit">
+</form>

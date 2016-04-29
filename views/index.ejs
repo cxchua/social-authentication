@@ -1,0 +1,139 @@
+<style>
+    .wholeThing {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topPortion {
+      display: flex;
+      flex-direction: row;
+      margin-top: 50px;
+    }
+    .firstPortion{
+        background-color: rgba(106, 113, 115, 0.77);
+        background-size: cover;
+        /*height: 80vh;
+        width: 2000px;
+        margin-left: -200px;*/
+
+    }
+    img.resize {
+      max-width:830px;
+      max-height:500px;
+      margin-left: -100px;
+    }
+
+    .words {
+      display: flex;
+      flex-direction: row;
+      margin-top: 200px;
+    }
+
+    .words1 {
+      color: white;
+    }
+
+    .more-lines {
+      font-size: 25px;
+      line-height: 30px;
+      font-weight: 300;
+    }
+
+    #tagline2 {
+      text-align: center;
+    }
+
+    .crazy-images {
+      display: flex;
+      flex-direction: row;
+      align-content: space-around;
+      text-align: center;
+    }
+
+    .crazy-image {
+      display: flex;
+      flex-direction: column;
+      padding: 100px;
+      margin: 20px;
+    }
+
+    /*span {
+      font-size: 50px;
+      color: white;
+      margin-bottom: 10px;
+      text-align: center;
+    }*/
+
+    .tagline2>p {
+      font-size: 30px;
+      margin-top: 10px;
+    }
+</style>
+<% if (currentUser) { %>
+
+<% } else { %>
+
+<div class="wholeThing">
+    <div class="topPortion">
+      <!-- <img class="resize" src="/images/computer.png" /> -->
+      <div class="words">
+        <!-- <div class="tag-line">
+          <p>Inventory Management for Wholesalers</p>
+        </div> -->
+        <div class="more-lines">
+          <p>Hakimchi allows you to manage the important relationships in your life</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="firstPortion">
+      <div id="tagline2">
+        <p>
+          Inventory Management System in the Cloud
+        </p>
+      </div>
+      <div class="crazy-images">
+        <div class="crazy-image">
+          <span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
+          <div class="words1">
+            <p>
+              Inventory and Orders
+            </p>
+          </div>
+        </div>
+        <div class="crazy-image">
+          <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+          <div class="words1">
+            <p>
+              Wholesale Pro
+            </p>
+
+          </div>
+        </div>
+        <div class="crazy-image">
+          <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+          <div class="words1">
+            <p>
+              Smooth Operations
+            </p>
+
+          </div>
+        </div>
+        <div class="crazy-image">
+          <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+          <div class="words1">
+            <p>
+              Smart Decisions
+            </p>
+          </div>
+        </div>
+
+
+      </div> -->
+
+    </div>
+
+    <% } %>
+
+
+
+</div>

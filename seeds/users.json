@@ -1,0 +1,43 @@
+
+[
+  {
+    "local": {
+      "name": "Junius Sim",
+      "email": "junius@gf.com",
+      "password" : "$2a$08$18O/yXOQAim8u4SCvqSNBujL882E2saU.pHS5jwdq8bc/1mxFeJ8e",
+      "organization" : "Life of Pi",
+      "webURL": "",
+      "role": "Supervisor"
+    }
+  },
+  {
+    "local": {
+      "name": "Angeline Tan",
+      "email": "angeline@gf.com",
+      "password" : "$2a$08$18O/yXOQAim8u4SCvqSNBujL882E2saU.pHS5jwdq8bc/1mxFeJ8e",
+      "organization": "Life of Pi",
+      "webURL": "",
+      "role": "Store"
+    }
+  },
+  {
+    "local": {
+      "name": "Stefanie Seah",
+      "email": "stefanie@gf.com",
+      "password" : "$2a$08$18O/yXOQAim8u4SCvqSNBujL882E2saU.pHS5jwdq8bc/1mxFeJ8e",
+      "organization": "Life of Pi",
+      "webURL": "",
+      "role": "Sales"
+    }
+  },
+  {
+    "local": {
+      "name": "Allan Lee",
+      "email": "allan@gf.com",
+      "password" : "$2a$08$18O/yXOQAim8u4SCvqSNBujL882E2saU.pHS5jwdq8bc/1mxFeJ8e",
+      "organization": "Life of Pi",
+      "webURL": "",
+      "role": "Sales"
+    }
+  }
+]

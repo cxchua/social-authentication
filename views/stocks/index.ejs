@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <style>
+      h1, table, th, td {
+      /*border: 2px solid black;*/
+      padding: 5px 10px;
+      }
+
+      .btn {
+        margin-top: 30px; 
+      }
+    </style>
+
+    <!-- <a href="/stock_adjustment/new" class="btn btn-default" >New Stock Adjustment</a> -->
+
+  
+
+    <table>
+    <tr>
+      <th>ID</th>
+      <th>Reason</th>
+      <th>Notes</th>
+      <th>Created Date</th>
+      <th>User</th>
+    </tr>
+    <% adjustments.forEach( function(adjustment) { %>
+    <tr>
+      <td><%= adjustment._id %></td>
+      <td><%= adjustment.reason %></td>
+      <td><%= adjustment.notes %></td>
+      <td><%= adjustment.createdDate.toDateString() %></td>
+      <td><%= adjustment.user.local.name %></td>
+      <td>
+        <a class="btn btn-primary" href= <%= "/stock_adjustment/" + adjustment._id %> >Show Details</a>
+      </td>
+    </tr>
+    <% } ) %>
+    </table>
+    <a href="/stock_adjustment/new" class="btn btn-default" >New Stock Adjustment</a>
+  </div>
+</div>
+<hr>

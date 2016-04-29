@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hakimchi</title>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+      margin-left: -90px;
+      font-size: 20px;
+    }
+
+    .navbar-header {
+      font-weight: 700;
+    }
+    .tokenDisplay {
+      word-wrap: break-word;
+    }
+	.container {
+      font-family: 'Oxygen', sans-serif;
+    }
+
+        #sidebar-wrapper {
+            /*z-index: 1;
+          width: 250px;
+          overflow-y: hidden;*/
+            background: white;
+            opacity: 0.9;
+            min-height: 100%;
+            height: 100vh;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .row {
+            height: 100%;
+        }
+
+        #page-content-wrapper {
+            /*width: 100%;*/
+            padding-top: 20px;
+            padding-left: 50px;
+            float: left;
+            height: 90vh;
+            background: #FDffff;
+        }
+
+        #wrapper {
+            background: #F1F1F2;
+        }
+
+        #wrapper.menuDisplayed #sidebar-wrapper {
+            width: 250px;
+        }
+
+        #wrapper.menuDisplayed #page-content-wrapper {
+            padding-left: 250px;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-nav li {
+            text-indent: 15px;
+            line-height: 40px;
+        }
+
+        .sidebar-nav li a {
+            display: block;
+            text-decoration: none;
+            font-family: 'Oxygen', sans-serif;
+            font-weight: 300;
+            color: rgb(202, 212, 228);
+        }
+
+        .navbar-nav>li>a:hover {
+          color: rgb(6, 163, 179);
+          background: rgb(3, 35, 47);
+        }
+
+        .sidebar-nav li:first-child {
+            padding-top: 10px;
+        }
+
+        .sidebar-nav li a:hover {
+            background: rgb(11, 29, 41);
+            color: rgb(6, 163, 179);
+        }
+
+        .navbar {
+            margin-bottom: 0px;
+            /*background: rgb(7, 64, 88);*/
+            background: grey;
+            color: blue;
+            margin-bottom: -10px;
+            border-radius: 0px !important;
+        }
+
+        .navbar a {
+            color: rgb(242, 242, 242);
+            font-weight: 700;
+        }
+
+        hr {
+            border: none;
+        }
+
+        table {
+            /*border-bottom: 1px solid gray;*/
+            padding: 5px 10px;
+            padding-top: 30px;
+            font-family: 'Oxygen', sans-serif;
+        }
+
+        tr,
+        th,
+        td {
+            border-bottom: 1px solid rgb(223, 228, 226);
+            padding: 5px;
+        }
+
+        span {
+          padding-right: 10px;
+        }
+
+        th {
+          color: rgb(146, 139, 147);
+          padding-bottom: 20px;
+        }
+
+    </style>
+
+  </head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <!-- <div class="navbar-header "> -->
+                <a class="navbar-brand" href="/">Hakimchi</a>
+            <!-- </div> -->
+            <div class="collapse navbar-collapse" id="user-menu">
+                <ul class="nav navbar-nav navbar-right ">
+                    <% if (currentUser) { %>
+                        <li><a href="/logout">Logout</a></li>
+                        <% } else { %>
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/signup">Signup</a></li>
+                            <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <% if (currentUser) { %>
+        <div class="wrapper container-fluid">
+            <div class="row">
+                <div id="sidebar-wrapper" class="col-md-2">
+                    <ul class="sidebar-nav">
+                        <!-- <li><a href="/"><span class="glyphicon glyphicon-apple" aria-hidden="true"></span>  APPLE PI</a></li> -->
+                        <li><a href="/"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>  Dashboard</a></li>
+                        <li><a href="/products"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>  Products</a></li>
+                        <li><a href="/sales"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>  Sales</a></li>
+                        <li><a href="/stock_adjustment"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>  Stock Adjustments</a></li>
+                        <li><a href="/token"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>  Token </a></li>
+                    </ul>
+                </div>
+
+                <div id="page-content-wrapper" class="col-md-10">
+                    <div>
+                        <!-- <a href="#" class= "btn btn-success" id="toggle-menu">Toggle Menu</a> -->
+                        <%- body %>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <% } else { %>
+            <div class="wrapper container">
+                <div class="row">
+
+                    <div id="page-content-wrappert" class="col-md-12">
+                        <div>
+                            <!-- <a href="#" class= "btn btn-success" id="toggle-menu">Toggle Menu</a> -->
+                            <%- body %>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        <% } %>
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="/javascripts/stockScript.js"></script>
+<script src="/javascripts/salesScript.js"></script>
+<script src="/javascripts/tokenScript.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://cdn.auth0.com/js/lock-9.0.min.js"></script>
+<script src="https://cdn.auth0.com/js/lock-9.0.min.js"></script>
+<script type="text/javascript">
+
+  var lock = new Auth0Lock('askJMdRDwKwXtPW08LNlav0h2gG5iNQY', 'tedchua85.auth0.com');
+
+
+  function signin() {
+    lock.show({
+        callbackURL: 'http://localhost:3000/testing'
+      , responseType: 'code'
+      , authParams: {
+        scope: 'openid profile'
+      }
+    });
+  }
+</script>
+
+
+
+    <pre id="output"></pre>
+</body>
+
+</html>

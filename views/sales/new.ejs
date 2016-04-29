@@ -1,0 +1,102 @@
+<style>
+    body {
+        font-family: "Oxygen", sans-serif;
+    }
+
+    h1 {
+        font-weight: 700;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .total{
+      display: flex;
+      flex-direction: column;
+    }
+
+    #input-values {
+      border-bottom: 0px;
+    }
+
+    #great {
+      margin-left: 30px;
+    }
+
+    .elements{
+      display: flex;
+      flex-direction: column;
+    }
+
+    #addNewSalesItem {
+      text-align: center;
+    }
+
+    #great {
+      padding-left: 20px;
+    }
+
+    input {
+      padding-left: 10px;
+    }
+
+    .form-control {
+      margin-left: -10px;
+    }
+
+    .entries {
+      margin-left: -20px;
+      text-align: center;
+    }
+
+    #addNewSalesItem {
+      color: rgb(146, 139, 147);
+      margin-bottom: 20px;
+    }
+    /*.great {
+      width: 165px;
+    }*/
+</style>
+<h1>Create Sale</h1>
+<form action="/sales" method="POST">
+    <div class="total">
+
+        <div class="elements">
+
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" name="customerName" placeholder="Customer's Name" />
+            </div>
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" name="customerEmail" placeholder="Customer's Email" />
+            </div>
+
+        </div>
+        <div class="entries col-md-4">
+            <table id="newSalesTable">
+                <tr id ="great">
+                    <td>
+                        <input type="text" class ="great" name="sku" placeholder="SKU"/>
+                    </td>
+                    <td class="cool">
+                        <input type="text" class ="great" name="qty" placeholder="Quantity"/>
+                    </td>
+                </tr>
+            </table>
+            <div id="addNewSalesItem">Add another item</div>
+        </div>
+        <!-- <div class="elements1">
+
+            <div class="form-group col-md-2">
+                <input type="text" class="form-control" name="sku" placeholder="SKU" />
+            </div>
+            <div class="form-group col-md-2">
+                <input type="text" class="form-control" name="qty" placeholder="Quantity" />
+            </div>
+
+        </div> -->
+
+    </div>
+
+    <div class="form-group col-md-2">
+        <button type="submit" class="btn btn-primary col-md-12">Submit</button>
+    </div>
+</form>

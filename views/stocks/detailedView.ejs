@@ -1,0 +1,31 @@
+<div>
+  <span>Reason: </span>
+  <span><%= adjustment.reason %></span>
+  <br />
+  <span>User: </span>
+  <span><%= adjustment.user.local.name %></span>
+</div>
+<table>
+    <tr>
+      <th>SKU</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Supplier</th>
+      <th>Quantity Change</th>
+      <th>Created Date</th>
+    </tr>
+    <% adjustment.adjustmentList.forEach( function(item) { %>
+      <tr>
+        <td><%= item.product.sku %></td>
+        <td><%= item.product.name %></td>
+        <td><%= item.product.description %></td>
+        <td><%= item.product.supplier %></td>
+        <td><%= item.qtyChange %></td>
+        <td><%= adjustment.createdDate.toDateString() %></td>
+      </tr>
+    <% })%>
+</table>
+  <div>
+    <span>Notes</span>
+    <div>put a big box here</div>
+  </div>
